@@ -9,9 +9,16 @@
     "angular-cookies": "1.2.10",
     "angular-animate": "1.2.10",
     "angular-route": "1.2.10"
+		"angular-translate": "2.0.1",
+		"d3": "3.4.3",
+		"nvd3": "*",
+		"angular-charts": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.10",
     "angular-scenario": "1.2.10"
-  }
+	},
+	"resolutions": {
+		"d3": "3.4.3"
+	}
 }

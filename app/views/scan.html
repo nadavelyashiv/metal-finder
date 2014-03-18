@@ -1,0 +1,16 @@
+<content has-header="true" has-footer="false" padding="true">
+
+	<!-- <scannable ng-model="data"> -->
+		<!-- <div ac-chart="chartType" ac-data="chartData" ac-config="config" id='chart' class='signal-chart'></div> -->
+		
+		<!-- ng-class="{true:'chart-expanded', false:'chart-collapsed'}[showChart]" -->
+		<div d3chart id='chart' class='signal-chart slideable' ac-data="chartData" ng-show="showChart">
+			<svg></svg>
+		</div>
+		<button slide-toggle="#chart" expanded="true" class="button button-block show-hide-chart-btn"  ng-click="showChart = !showChart" >
+			<i ng-class="{true:'ion-arrow-up-b', false:'ion-arrow-down-b'}[showChart]"></i>
+		</button>	
+
+		<canvas scannable id="scanCanvas" class="scan-canvas"/>
+	<!-- </scannable> -->
+</content>

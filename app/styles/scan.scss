@@ -1,0 +1,39 @@
+.scan-canvas {
+    border: solid 2px black;
+    width: 100%;
+} 
+
+.centered {
+    text-align: center;
+}
+
+.signal-chart {
+    height: 200px;
+    border: solid 1px black;
+    // margin-bottom: 10px;
+    float:left;
+    text-align: center;
+    font-weight: bold;
+    // margin-bottom: 2em;
+    width: 100%;
+}
+
+.signal-chart.chart-expanded {
+    height: 200px;
+}
+
+.signal-chart.chart-collapsed {
+    height: 0px;
+}
+
+.show-hide-chart-btn {
+    min-height: 0px;
+    height: 25px;
+}
+
+.show-hide-chart-btn i {
+    font-size: 30px;
+    vertical-align: top;
+    // position: absolute;
+    // top: 0;
+}

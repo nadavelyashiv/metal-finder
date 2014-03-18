@@ -1,8 +1,12 @@
-<content padding="true" has-header="true" has-footer="false" scroll="true" on-refresh="onRefresh()">
+<content has-header="true" has-footer="false" scroll="true" on-refresh="onRefresh()">
   <refresher></refresher>
-  <div ng-if='!datas'>Swipe to refresh countries list</div>
-  <h2 ng-if='datas'>Countries</h2>
+  <div ng-if='!devices' class="centered">Pull down to refresh list</div>
+  
   <ul class="list" ng-cloak>
-    <li ng-repeat="data in datas" class="item">{{data.Name | lowercase}}</li>
+    <!-- <li ng-repeat="data in datas" class="item">{{data.Name | lowercase}}</li> -->
+    <a ng-repeat="device in devices" class="item" href="#/scan" ng-click="selectDevice(device)">
+		<i class="icon-chevron-right pull-right"></i>
+		{{device.name}}
+	</a>
   </ul>
 </content>

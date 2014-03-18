@@ -12,8 +12,10 @@ clone this repo and:
 - `bower install`
 - `mkdir platforms`
 - `phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git`
-- `cordova platform add android`
 - `grunt build`
+- `cordova platform add android`
+- copy `merges/android` dir to `platforms/android` dir (overwrite icons and splash screen).
+
 
 If a device is connected:
 `cordova run android`

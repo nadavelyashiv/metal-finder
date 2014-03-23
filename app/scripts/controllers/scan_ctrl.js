@@ -1,10 +1,13 @@
 /*global _CONTROLLERS_ */
 'use strict';
 
-angular.module(_CONTROLLERS_).controller('ScanCtrl', ['$scope', 'BTService',
+angular.module(_CONTROLLERS_).controller('ScanCtrl', ['$rootScope', '$scope', 'BTService',
 
-	function ($scope, BTService) {
+	function ($rootScope, $scope, BTService) {
 		$scope.showChart = true;
+
+		$scope.title = BTService.selectedDevice.name;
+
 
 		BTService.subscribe(function (data) {
 			$scope.data = data;
@@ -13,10 +16,13 @@ angular.module(_CONTROLLERS_).controller('ScanCtrl', ['$scope', 'BTService',
 				'x': data.y,
 				'y': Math.max.apply(null, data.pointsData)
 			});
-
-
-
 		});
+
+
+		$scope.$onRootScope('windowedViewToggled', function (event) {
+			$scope.showChart = !$scope.showChart;
+		});
+
 
 		$scope.data = BTService.getData();
 		BTService.getData();
@@ -46,6 +52,8 @@ angular.module(_CONTROLLERS_).controller('ScanCtrl', ['$scope', 'BTService',
 			values: []
 		}];
 
-
+		// $scope.$onRootScope('list.deviceSelected', function (event, device) {
+		// 	$scope.title = device.name;
+		// });
 	}
 ]);

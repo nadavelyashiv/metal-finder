@@ -23,7 +23,7 @@ angular.module(_DIRECTIVES_)
 			right: 90
 		});
 
-		function addToChart(data) {
+		function udpateChart(data) {
 			chart.update();
 		}
 
@@ -42,7 +42,10 @@ angular.module(_DIRECTIVES_)
 
 			scope.$watch('data', function (newValue, oldValue) {
 				// console.log(newValue);
-				addToChart(newValue);
+				if (scope.showChart) {
+					udpateChart(newValue);
+				}
+
 			});
 		}
 

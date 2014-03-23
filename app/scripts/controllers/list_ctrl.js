@@ -4,10 +4,13 @@
 angular.module(_CONTROLLERS_)
 	.controller('ListCtrl', ['$rootScope', '$scope', 'BTService',
 		function ($rootScope, $scope, BTService) {
+			$scope.title = 'main.title';
+
 			$scope.devices = null;
 
 			$scope.selectDevice = function (device) {
 				BTService.selectedDevice = device;
+
 				$rootScope.$emit('list.deviceSelected', device);
 			};
 
@@ -17,5 +20,7 @@ angular.module(_CONTROLLERS_)
 					$scope.$broadcast('scroll.refreshComplete');
 				});
 			};
+
+
 		}
 	]);

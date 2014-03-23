@@ -1,6 +1,7 @@
 .scan-canvas {
     border: solid 2px black;
     width: 100%;
+    transition: top 1s;
 } 
 
 .centered {
@@ -10,7 +11,7 @@
 .signal-chart {
     height: 200px;
     border: solid 1px black;
-    // margin-bottom: 10px;
+    margin-bottom: 10px;
     float:left;
     text-align: center;
     font-weight: bold;
@@ -29,11 +30,34 @@
 .show-hide-chart-btn {
     min-height: 0px;
     height: 25px;
+    // -webkit-transition:top linear 1s;
+    // transition:top linear 1s;
+    // top: 0px;
 }
+
+// .show-hide-chart-btn.up {
+//     top: -200px
+// }
 
 .show-hide-chart-btn i {
     font-size: 30px;
     vertical-align: top;
     // position: absolute;
-    // top: 0;
+}
+
+
+.slide-enabled {
+    position: relative;
+    height: 200px;
+    -webkit-transition:top linear 1s;
+    transition:top linear 1s;
+    top: 0;
+}
+
+.slide-enabled.ng-hide {
+    top: -200px;
+}
+
+.slide-enabled.ng-hide-add, .slide-enabled.ng-hide-remove {
+    display:block!important;
 }
